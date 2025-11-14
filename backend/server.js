@@ -8,7 +8,6 @@ const prisma = new PrismaClient();
 const PORT = 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "defaultsecret";
 
-
 app.use(express.json());
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
