@@ -6,8 +6,8 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const prisma = new PrismaClient();
 const PORT = 3000;
-const JWT_SECRET = "mysecretkey";
-const JWT_REFRESH_SECRET = "myrefreshsecretkey";
+const JWT_SECRET = process.env.JWT_SECRET || "defaultsecret";
+
 
 app.use(express.json());
 app.post("/signup", async (req, res) => {
